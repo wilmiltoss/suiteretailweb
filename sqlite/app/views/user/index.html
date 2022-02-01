@@ -1,0 +1,70 @@
+<h1 class="page-header">
+    Agenda</h1>
+
+<div id="grid"></div>
+
+<script>
+    $(document).ready(function () {
+        var agrid = $("#grid").anexGrid({
+            class: 'table-striped table-bordered',
+            columnas: [{
+                    leyenda: 'Id',
+                    columna: 'id',
+                    ordenable: true
+                },
+                {
+                    leyenda: 'Codigo',
+                    columna: 'codigo_interno',
+                    ordenable: true
+                },
+                {
+                    leyenda: 'Detalles',
+                    columna: 'detalles',
+                    ordenable: true
+                },
+                {
+                    leyenda: 'FechaIns',
+                    columna: 'fecha_ins',
+                    style: 'width:120px;',
+                    ordenable: true
+                },
+                {
+                    leyenda: 'FechaAct',
+                    columna: 'fecha_act',
+                    style: 'width:120px;',
+                    ordenable: true
+                },
+                {
+                    leyenda: 'CodigoCategoria',
+                    columna: 'codigo_categoria',
+                    style: 'width:120px;',
+                    ordenable: true
+                }
+            ],
+            modelo: [{
+                    propiedad: 'id'
+                },
+                {
+                    propiedad: 'codigo_interno'
+                },
+                {
+                    propiedad: 'descripcion'
+                },
+                {
+                    propiedad: 'fecha_ins'
+                },
+                {
+                    propiedad: 'fecha_act'
+                },
+                {
+                    propiedad: 'codigo_categoria',
+                },
+            ],
+            url: '?controller=User&action=getAll',
+            paginable: true,
+            limite: [10,20,30],
+            columna: 'id',
+            columna_orden: 'DESC'
+        })
+    })
+</script>

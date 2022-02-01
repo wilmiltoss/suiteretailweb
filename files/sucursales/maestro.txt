@@ -1,0 +1,1 @@
+codigo_producto|codigo|descripcion|codigo_unidad_medida|precio_venta
